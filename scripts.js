@@ -150,7 +150,7 @@ function importFromUG() {
     .catch(() => alert("Something went wrong. Check the link or try again."));
 }
 
-// 🔄 Sync songs in real-time
+// Real-time sync from Firestore
 songsRef.orderBy("title").onSnapshot(snapshot => {
   songsData.length = 0;
   snapshot.forEach(doc => {
@@ -160,3 +160,7 @@ songsRef.orderBy("title").onSnapshot(snapshot => {
   });
   renderSongs();
 });
+
+// Make functions globally accessible for button onclick
+window.importFromUG = importFromUG;
+window.importSong = importSong;
