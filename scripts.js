@@ -3,10 +3,7 @@ let scrollInterval = null;
 
 const songsData = [];
 const transposeValues = {};
-
-// Reference to Firestore
-const db = firebase.firestore();
-const songsRef = db.collection("songs");
+const songsRef = firebase.firestore().collection("songs");
 
 function transposeChord(chord, steps) {
   const root = chord.match(/[A-G][#b]?/);
