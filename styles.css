@@ -1,0 +1,105 @@
+body {
+  font-family: sans-serif;
+  background: #121212;
+  color: #eee;
+  padding: 2rem;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+button {
+  margin-right: 10px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+pre {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+pre code {
+  font-family: monospace;
+  white-space: pre-wrap;
+  display: block;
+}
+
+pre code b {
+  font-weight: bold;
+  color: #ffd700;
+}
+
+#floating-scroll-slider {
+  position: fixed;
+  top: 50%;
+  right: -85px;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+#floating-scroll-slider input[type="range"] {
+  transform: rotate(270deg);
+  width: 200px; /* make it longer vertically */
+  height: 30px;
+  cursor: pointer;
+  accent-color: #ffd700;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-direction: row;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    white-space: nowrap;
+  }
+
+  pre {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}

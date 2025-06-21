@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Worship - Keyb</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+      apiKey: "AIzaSyDOZWrtTIi3ooPJ2AEOc6oYkH47S4s4iMw",
+      authDomain: "worship-3fbe9.firebaseapp.com",
+      projectId: "worship-3fbe9",
+      storageBucket: "worship-3fbe9.firebasestorage.app",
+      messagingSenderId: "437145000868",
+      appId: "1:437145000868:web:1b3b19521f1c48e669ff31",
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+
+</head>
+<body>
+  <h1>Lyrics n Chords</h1>
+  <div class="controls">
+    <button onclick="importFromUG()">Import from UG Link</button>
+    <button onclick="toggleScroll()">Toggle Auto Scroll</button>
+    <input type="file" accept=".txt" onchange="importSong(event)" />
+  </div>
+
+  <!-- ✅ Only one scrollSpeed range, floating -->
+  <div id="floating-scroll-slider">
+    <input type="range" id="scrollSpeed" min="10" max="100" value="50">
+  </div>
+
+  <div id="songs"></div>
+  <script src="scripts.js"></script>
+</body>
+</html>
