@@ -3,7 +3,8 @@ let scrollInterval = null;
 
 const songsData = [];
 const transposeValues = {};
-const songsRef = firebase.firestore().collection("songs");
+const db = firebase.firestore();
+const songsRef = db.collection("songs");
 
 function transposeChord(chord, steps) {
   const root = chord.match(/[A-G][#b]?/);
@@ -158,6 +159,9 @@ songsRef.orderBy("title").onSnapshot(snapshot => {
   renderSongs();
 });
 
-// Make functions globally accessible for button onclick
 window.importFromUG = importFromUG;
 window.importSong = importSong;
+window.toggleScroll = toggleScroll;
+window.transposeSong = transposeSong;
+window.deleteSong = deleteSong;
+window.moveSong = moveSong;
