@@ -128,7 +128,7 @@ function importFromUG() {
   const url = prompt("Paste Ultimate Guitar URL:");
   if (!url) return;
 
-  fetch('http://localhost:3000/fetch-chords', {
+  fetch('https://backend-3ckp.onrender.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ url })
