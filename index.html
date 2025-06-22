@@ -7,12 +7,10 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon.ico">
 
-  <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
 <script>
-  // Your Firebase config
   const firebaseConfig = {
       apiKey: "AIzaSyDOZWrtTIi3ooPJ2AEOc6oYkH47S4s4iMw",
       authDomain: "worship-3fbe9.firebaseapp.com",
@@ -34,7 +32,6 @@
     <input type="file" accept=".txt" onchange="importSong(event)" />
   </div>
 
-  <!-- ✅ Only one scrollSpeed range, floating -->
   <div id="floating-scroll-slider">
     <input type="range" id="scrollSpeed" min="10" max="100" value="50">
   </div>
