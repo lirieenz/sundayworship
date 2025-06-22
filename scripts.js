@@ -126,14 +126,22 @@ function importFromUG() {
   const url = prompt("Paste Ultimate Guitar URL:");
   if (!url) return;
 
-  fetch('https://backend-wo7u.onrender.com/fetch-chords', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ url })
-  })
+  // WARM UP SERVER FIRST
+  fetch('https://backend-wo7u.onrender.com')
+    .then(() => {
+      // Now do the actual POST
+      return fetch('https://backend-wo7u.onrender.com/fetch-chords', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url })
+      });
+    })
     .then(res => res.json())
     .then(data => {
-      if (data.error || !data.raw) return alert("Failed to fetch chords.");
+      if (data.error || !data.raw) {
+        alert("Failed to fetch chords.");
+        return;
+      }
 
       const id = `ug_${Date.now()}`;
       const title = url.split('/').pop().replace(/[-_]/g, ' ').replace(/\.(crd|tab|pro|txt)/i, '');
